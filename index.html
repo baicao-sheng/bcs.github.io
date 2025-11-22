@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>药品说明书 - 详细说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9fc;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a73e8, #6c8ef5);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .medicine-info {
+            padding: 25px 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .medicine-info h2 {
+            color: #1a73e8;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .medicine-info p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .image-container {
+            padding: 30px;
+            text-align: center;
+            background-color: #f9fbfd;
+        }
+        
+        .image-container h3 {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 20px;
+        }
+        
+        .medicine-image {
+            max-width: 100%;
+            max-height: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eaeaea;
+            transition: transform 0.3s ease;
+        }
+        
+        .medicine-image:hover {
+            transform: scale(1.01);
+        }
+        
+        .download-section {
+            padding: 30px;
+            text-align: center;
+            background-color: #f0f7ff;
+        }
+        
+        .download-section h3 {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 20px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1a73e8, #6c8ef5);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(26, 115, 232, 0.4);
+        }
+        
+        .download-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .file-info {
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 8px;
+            }
+            
+            header {
+                padding: 20px 15px;
+            }
+            
+            header h1 {
+                font-size: 24px;
+            }
+            
+            .medicine-info, .image-container, .download-section {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>药品说明书</h1>
+            <p>请仔细阅读说明书并在医师指导下使用</p>
+        </header>
+        
+        <div class="medicine-info">
+            <h2>药品基本信息</h2>
+            <p><strong>药品名称：</strong>示例药品</p>
+            <p><strong>成分：</strong>每片含有效成分XXX毫克，辅料为淀粉、硬脂酸镁等</p>
+            <p><strong>适应症：</strong>用于缓解轻至中度疼痛，如头痛、关节痛、偏头痛等</p>
+            <p><strong>用法用量：</strong>口服。成人一次1片，一日3次</p>
+        </div>
+        
+        <div class="image-container">
+            <h3>药品说明书详情</h3>
+            <img src="https://via.placeholder.com/800x1000/4a86e8/ffffff?text=药品说明书图片" alt="药品说明书" class="medicine-image">
+        </div>
+        
+        <div class="download-section">
+            <h3>下载完整药品说明书</h3>
+            <a href="#" class="download-btn">
+                <i>📄</i> 下载PDF版本说明书
+            </a>
+            <p class="file-info">文件大小：约 2.3 MB | 更新日期：2023年10月15日</p>
+        </div>
+        
+        <footer>
+            <p>© 2023 药品信息平台 | 本页面仅供参考，实际用药请遵医嘱</p>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.querySelector('.download-btn');
+            
+            downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('PDF文件将开始下载。如果下载未开始，请检查您的浏览器设置。');
+                // 在实际应用中，这里应该链接到真实的PDF文件
+                // window.location.href = 'path/to/your/file.pdf';
+            });
+            
+            // 添加图片点击放大效果（简化版）
+            const medicineImage = document.querySelector('.medicine-image');
+            medicineImage.addEventListener('click', function() {
+                alert('在实际应用中，这里可以实现图片放大查看功能');
+            });
+        });
+    </script>
+</body>
+</html>
